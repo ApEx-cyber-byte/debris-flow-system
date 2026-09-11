@@ -1,0 +1,124 @@
+:root {
+  --dfs-bg: #070b16;
+  --dfs-panel: #0d1526;
+  --dfs-panel-2: #111c33;
+  --dfs-border: rgba(143, 163, 200, 0.16);
+  --dfs-text: #d7e1f5;
+  --dfs-text-dim: #8fa3c8;
+  --dfs-accent: #42d6f5;
+  --dfs-warm: #ffa53d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--dfs-bg);
+  color: var(--dfs-text);
+  font-family: 'Segoe UI', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+/* --- Element Plus dark-friendly overrides -------------------------------- */
+.el-card,
+.el-drawer,
+.el-aside {
+  --el-card-bg-color: var(--dfs-panel);
+  --el-bg-color: var(--dfs-panel);
+  --el-text-color-primary: var(--dfs-text);
+  --el-text-color-regular: var(--dfs-text-dim);
+  --el-border-color: var(--dfs-border);
+}
+
+.dfs-panel {
+  background: var(--dfs-panel);
+  border: 1px solid var(--dfs-border);
+  border-radius: 10px;
+}
+
+.dfs-panel-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: var(--dfs-text);
+  border-bottom: 1px solid var(--dfs-border);
+}
+
+.dfs-scroll {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(143, 163, 200, 0.35) transparent;
+}
+
+.dfs-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dfs-scroll::-webkit-scrollbar-thumb {
+  background: rgba(143, 163, 200, 0.3);
+  border-radius: 4px;
+}
+
+.dfs-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dfs-mono {
+  font-family: 'Cascadia Mono', 'Consolas', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.dfs-stat-label {
+  color: var(--dfs-text-dim);
+  font-size: 11px;
+}
+
+.dfs-stat-value {
+  color: var(--dfs-text);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.dfs-hint {
+  color: var(--dfs-text-dim);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* Element Plus slider/input tuning for the compact parameter panel */
+.el-form-item {
+  margin-bottom: 12px;
+}
+
+.el-form-item__label {
+  color: var(--dfs-text-dim) !important;
+  font-size: 12px !important;
+  line-height: 1.3 !important;
+}
+
+.el-collapse-item__header,
+.el-collapse-item__wrap {
+  background: transparent !important;
+  border-color: var(--dfs-border) !important;
+  color: var(--dfs-text) !important;
+  font-size: 12.5px !important;
+}
+
+.el-collapse {
+  border: none !important;
+}

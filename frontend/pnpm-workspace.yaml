@@ -1,0 +1,9 @@
+packages:
+  - .
+
+# pnpm >= 10 blocks dependency build scripts by default. esbuild's postinstall
+# installs the platform binary that Vite needs, and vue-demi's postinstall
+# selects the correct Vue 3 shim — both are required for the dev server to run.
+allowBuilds:
+  esbuild: true
+  vue-demi: true

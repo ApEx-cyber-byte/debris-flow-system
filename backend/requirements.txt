@@ -1,0 +1,33 @@
+# ---------------------------------------------------------------------------
+# 基于流体动力学的泥石流坡度滚落物理动态分析系统 — 后端依赖 (第一版)
+# Debris-Flow Slope Runout Physical Dynamics Analysis System — backend deps
+#
+# 核心运行时（必需，纯 CPU，Python >= 3.11）
+# ---------------------------------------------------------------------------
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+pydantic>=2.9.0
+numpy>=2.1.0
+websockets>=13.0
+python-multipart>=0.0.12
+
+# ---------------------------------------------------------------------------
+# 可选加速后端 / Optional accelerated backends
+# 未安装时系统自动回退到内置 NumPy 求解器（详见 app/physics/backends.py）
+# 安装方式见 docs/OPTIONAL_BACKENDS.md
+# ---------------------------------------------------------------------------
+# --- PySPH (SPH 粒子求解器, 需要 Cython + C++ 编译器; 无 wheel, 需源码编译) ---
+#   https://github.com/sweeneyde/pysph   (BSD-3-Clause)
+#   pip install pysph    # 注意: 仅提供 sdist, 需要 MSVC / gcc 工具链
+#
+# --- SynxFlow (深度积分浅水方程求解器, 需要 CUDA GPU) ---
+#   https://github.com/SynxFlow/SynxFlow   (MIT)
+#   pip install synxflow # 需要 CUDA Toolkit + cupy
+#
+# --- PyTorch (AI 代理模型 CNN-LSTM / DR-LSTM) ---
+#   https://github.com/lizhixu123/DL-for-landslide-propagation-early-warning
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+#
+# --- 序列化与测试 ---
+# pytest>=8.0.0
+# httpx>=0.27.0
